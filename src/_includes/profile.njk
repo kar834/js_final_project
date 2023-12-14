@@ -1,0 +1,52 @@
+
+<section class="profile">
+  <div class="profile__card">
+    <p class="profile__text">Hi! I'm <span class="profile__text--highlight">Kevin</span>, a student at SUNY Orange</p>
+    <p class="profile__text">As a <span class="profile__text--highlight">Web Developer</span>, I love building sites and learning more about the web.</p>
+    <p class="profile__text">This is my final project for my Javascript class.</p>
+    <p class="profile__text"> I am open to learn more about JavaScript. If you have something to share with me, we can <a class="profile__link" href="/contact">get in touch</a>.<p>
+   <!-- 1. Script from playground lab dipslaying number of paragraphs -->
+   <script> 
+    const elements = document.getElementsByTagName("p");
+    let numb = elements.length;
+    console.log("there are " +numb+ " paragraphs")
+   </script>
+   
+    <!--2. Function to sort words in alphabetical order lab 7 -->
+    <script defer>
+    // Define a function to sort and log words
+    function sortAndLogWords() {
+      // Get all paragraphs with the class profile_text 
+      let paragraphs = document.querySelectorAll('.profile_text');
+
+      // Extract the text content from paragraphs
+      let textArray = Array.from(paragraphs).map(paragraph => paragraph.textContent).join(' ');
+
+      // Split the text into an array of words
+      let words = textArray.split(/\s+/);
+
+      // Sort the words alphabetically
+      let sortedWords = words.sort();
+
+      // Log the sorted words to the console
+      console.log(sortedWords);
+    }
+    // Call the function when the document finished loading
+    document.addEventListener('DOMContentLoaded', sortAndLogWords);
+    </script>
+
+    <!-- 3. Function to write a cookie from chapter 9 lab -->
+    <script defer>
+      function writeCookie(name, value, path, domain, secure) {
+        if (name && value) {
+          let cStr = name + "=" + encodeURIComponent(value);
+          if (expDate) cStr += ";expires=" + expDate.toUTCSring();
+          if (path) cStr += ";path=" + path;
+          if (domain) cStr += ";domain=" + domain;
+          if (secure) cStr += ";secure=";
+          document.cookie = cStr;
+        }
+      }
+    </script>
+  </div>
+</section>

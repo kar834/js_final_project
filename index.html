@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="I'm a Frontend software developer who builds sites and apps that help people reach their personal and professional goals."/>
+  <title>Eleventy Portfolio</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="content">
+    <header class="header container">
+    <h1 class="header__title">
+      <a href="/">Kevin Romero</a>
+    </h1>
+    <ul class="header__links">
+      <li>
+        <a class="header__link" href="/about">About</a>
+      </li>
+      <li>
+        <a class="header__link" href="/projects">Projects</a>
+      </li> 
+      <li>
+        <a class="header__link" href="/contact">Contact</a>
+      </li>
+    </ul>
+	</header>
+    <main class="main container">
+      
+
+<section class="profile">
+  <div class="profile__card">
+    <p class="profile__text">Hi! I'm <span class="profile__text--highlight">Kevin</span>, a student at SUNY Orange</p>
+    <p class="profile__text">As a <span class="profile__text--highlight">Web Developer</span>, I love building sites and learning more about the web.</p>
+    <p class="profile__text">This is my final project for my Javascript class.</p>
+    <p class="profile__text"> I am open to learn more about JavaScript. If you have something to share with me, we can <a class="profile__link" href="/contact">get in touch</a>.<p>
+   <!-- 1. Script from playground lab dipslaying number of paragraphs -->
+   <script> 
+    const elements = document.getElementsByTagName("p");
+    let numb = elements.length;
+    console.log("there are " +numb+ " paragraphs")
+   </script>
+   
+    <!--2. Function to sort words in alphabetical order lab 7 -->
+    <script defer>
+    // Define a function to sort and log words
+    function sortAndLogWords() {
+      // Get all paragraphs with the class profile_text 
+      let paragraphs = document.querySelectorAll('.profile_text');
+
+      // Extract the text content from paragraphs
+      let textArray = Array.from(paragraphs).map(paragraph => paragraph.textContent).join(' ');
+
+      // Split the text into an array of words
+      let words = textArray.split(/\s+/);
+
+      // Sort the words alphabetically
+      let sortedWords = words.sort();
+
+      // Log the sorted words to the console
+      console.log(sortedWords);
+    }
+    // Call the function when the document finished loading
+    document.addEventListener('DOMContentLoaded', sortAndLogWords);
+    </script>
+
+    <!-- 3. Function to write a cookie from chapter 9 lab -->
+    <script defer>
+      function writeCookie(name, value, path, domain, secure) {
+        if (name && value) {
+          let cStr = name + "=" + encodeURIComponent(value);
+          if (expDate) cStr += ";expires=" + expDate.toUTCSring();
+          if (path) cStr += ";path=" + path;
+          if (domain) cStr += ";domain=" + domain;
+          if (secure) cStr += ";secure=";
+          document.cookie = cStr;
+        }
+      }
+    </script>
+  </div>
+</section>
+<section class="technologies">
+  <h2 class="technologies__heading">This site was created using</h2>
+  <ul class="technologies__list">
+    <li class="technologies__item">
+      <div class="technologies__logo">
+      <img src="/images/javascript.svg" alt="JavaScript logo">
+      </div>
+      <h3 class="technologies__title">JavaScript</h3>
+    </li>
+    <li class="technologies__item">
+      <div class="technologies__logo">
+      <img src="/images/590px-Node.js_logo.svg.png" alt="Node.js logo">
+      </div>
+      <h3 class="technologies__title">Node.js</h3>
+    </li>
+    <li class="technologies__item">
+      <div class="technologies__logo">
+      <img src="/images/eleventy.png" alt="Eleventy logo">
+      </div>
+      <h3 class="technologies__title">Eleventy</h3>
+    </li>
+    <li class="technologies__item">
+      <div class="technologies__logo">
+      <img src="/images/nunjucks.png" alt="NunJucks logo">
+      </div>
+      <h3 class="technologies__title">NunJucks</h3>
+    </li>
+</section>
+    </main>
+  </div>
+    <footer class="footer">
+  	<p>&copy; Kevin Romero 2023</p>
+  </footer>
+</body>
+</html>
